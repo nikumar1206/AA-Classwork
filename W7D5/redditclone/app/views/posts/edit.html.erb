@@ -1,0 +1,26 @@
+<h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p>
+<form action= <%= post_url(@post)%> method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="authenticity_token" value = <%= form_authenticity_token %>>
+
+    <label for="title">Title</label>
+    <input type="text" name="post[title]" id="title" value <%= post.title %>>
+
+    <label for="url">URL</label>
+    <input type="text" name="post[url]" id="url" value <%= post.url %>>
+
+    <label for="content">Content</label>
+    <textarea id="content" name="post[content" rows="4" cols="50" value = <%= post.content %>>
+
+    <input type="hidden" name="post[sub_ids][]" value="">
+    <% Sub.all.each do |sub| %>
+        <label for="subs"></label>
+        <input type="checkbox" id= "subs" name="post[sub_ids][]" value="<%= sub.id %>"
+        <%= "checked" if post.sub_ids.include?(sub.id) %>>
+        <%= sub.name %>
+        <br>
+    <% end %>
+    <input type="submit" value = "Edit Post!">
+    
+</form>

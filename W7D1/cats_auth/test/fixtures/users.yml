@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string
+#  password_digest :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  session_token   :string
+#
+
+one:
+  username: MyString
+  password_digest: MyString
+
+two:
+  username: MyString
+  password_digest: MyString

@@ -1,0 +1,60 @@
+
+
+<% if action == :edit %>
+  <% action_url = cat_url(cat)%>
+<% else %>
+  <% action_url = cats_url %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+  <% if action == :edit && cat.persisted? %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <%# Name %>
+  <label for="name">Name</label>
+  <input id="name" type="text" name="cat[name]" value="<%= cat.name %>">
+
+  <br>
+  <%# Color Dropdown Menu %>
+  <label for="color">Color</label>
+  <select name="color" id="color">
+    <option value="white" <%= 'selected' if cat.color == "white" %>>White</option>
+    <option value="blue" <%= 'selected' if cat.color == "blue" %>>Blue</option>
+    <option value="green" <%= 'selected' if cat.color == "green" %>>Green</option>
+    <option value="yellow" <%= 'selected' if cat.color == "yellow" %>>Yellow</option>
+    <option value="brown" <%= 'selected' if cat.color == "brown" %>>Brown</option>
+    <option value="black" <%= 'selected' if cat.color == "black" %>>Black</option>
+    <option value="ginger" <%= 'selected' if cat.color == "ginger" %>>Ginger</option>
+  </select>
+
+  <br>
+  <%# Birthday!  %>
+  <label for="birthday">Birthday</label>
+  <input id="birthday" type="date" name="birth_date" value="<%= cat.birth_date %>">
+
+  <br>
+
+  <%# Sex %>
+  <label for="sex">Sex</label>
+  <br>
+  
+  <input type="radio" id="M" name="sex" value="<%= cat.sex %>" <%= 'checked' if cat.sex == 'M' %>>
+  <label for="M">Male</label>
+  <br>
+
+  <input type="radio" id="F" name="sex" value="<%= cat.sex %>" <%= 'checked' if cat.sex == 'F' %>>
+  <label for="F">Female</label>
+
+  <br>
+  <br>
+
+  <%# Description  %>
+  <label for="description">Description</label>
+  <textarea name="cat[description]">
+    <%= cat.description %>
+  </textarea>
+
+  <br><br>
+  <input type="submit" value="<%= action == :edit ? 'Update cat' : 'Add cat'%>">
+</form>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/external_javascript_example.js">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12345678-9', 'auto');
+  ga('send', 'pageview');
+    </script>
+    <title>Recipe Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+        body {
+            font-family: Roboto;
+        }
+        img {
+            width: 400px;
+            height: 400px;
+        }
+        </style>
+</head>
+<body>
+    <h1>
+        How to Make Butter Chicken
+    </h1>
+    <ul>
+        <li><a href='#description'>Description</a></li>
+        <li><a href='#ingredients'>Ingredients</a></li>
+        <li><a href='#directions'>Directions</a></li>
+    </ul>
+    <h2 id="'description">Description</h2>
+    Welcome, to the home of making the best butter chicken in the world! <br>
+    <img src="assets/butter_chicken.jpg" alt="Butter Chicken Pic">
+    <figcaption>Butter Chicken garnished with cilantro and cream</figcaption>
+    <br>
+    <p>Butter Chicken is a North Indian dish and is a close cousin of the U.K's national dish Chicken Tikka Masala.
+        This recipe will teach you how to make my gramma's version. <br>
+        Read more about the history of this dish <a href="https://en.wikipedia.org/wiki/Butter_chicken">here.</a>
+    </p>
+
+    <h2 id='ingredients'>Ingredients</h2>
+    <ul>
+        <li>Lots of Butter</li>
+        <li>Some boneless Chicken</li>
+        <li>Heavy Cream</li>
+        <li>Garlic</li>
+        <li>Ginger</li>
+        <li>Tomato</li>
+        <li>Onions</li>
+        <li>Garam Masala</li>
+        <li>Spices, according to your preferences!</li>
+
+    </ul>
+    <h2 id="directions">Directions</h2>
+    <ol>
+        <li>Combine chicken with a marinade of garam masala and your spice mix. Let mixture marinade for 30 mins.</li>
+        <li>Heat butter over a large skillet on medium heat. Add your marinated chicken. Fry until brown and set aside.</li>
+        <li>In the same pan, sauté onions until brown. Add your garlic and ginger, until fragrant.</li>
+        <li>Add crushed tomatoes, chilli powder (optional), and salt. Leave on simmer and let sauce thicken.</li>
+        <li>Once sauce has thickened, remove from pan, and blend until smooth. Pour the sauce back into the pan and add the chicken.</li>
+        <li>Garnish with cilantro and cream and serve with a side of naan or rice!</li>
+    </ol>
+    <br><br><br>
+    <h3>Drop a review below!</h3>
+    <section id="reviews">
+        <form id='review-form' action="/reviews" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name"> <br>
+            <label for="rating_1">Rating 1</label>
+            <input type="radio" name="rating" id="rating_1" value="1">
+            <label for="rating2">2</label>
+            <input type="radio" name="rating" id="rating2" value="2">
+            <label for="rating3">3</label>
+            <input type="radio" name="rating" id="rating3" value="3">
+            <label for="rating4">4</label>
+            <input type="radio" name="rating" id="rating4" value="4">
+            <label for="rating5">5</label>
+            <input type="radio" name="rating" id="rating5" value="5"><br>
+            <label for="expertise">Cooking Expertise</label>
+            <select name="expertise" id="expertise" >
+                <option disabled="true" selected="true" value="default">Select Cooking Expertise</option>
+                <option value="Can't even cook water">Can't even cook water</option>
+                <option value="Sometimes Cook">Sometimes Cook</option>
+                <option value="Cook Everyday">Cook Everyday</option>
+                <option value="Cooking is a Hobby">Cooking is a Hobby</option>
+                <option value="Put me in a Michelin Star restaurant rn ">Put me in a Michelin Star restaurant rn </option>
+            </select> <br>
+            <label for="review">Review</label>
+            <textarea name="review" id="review" cols="20" rows="20"></textarea>
+            <input type="submit" value="Submit Review!">
+        </form>
+    </section>
+</body>
+<br><br><br><br>
+<footer>Recipe not mine.Can be found <a href="https://cafedelites.com/butter-chicken/">here</a></footer>
+</html>
